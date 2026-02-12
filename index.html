@@ -7,6 +7,7 @@
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
   <title>THE VINE PUB & THAI RESTAURANT</title>
   <meta charset="utf-8">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet"
@@ -32,6 +33,7 @@
   <link rel="stylesheet" href="css/flaticon.css">
   <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="css/style.css">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -48,7 +50,7 @@
             <div class="col-md pr-4 d-flex topper align-items-center">
               <div class="icon mr-2 d-flex justify-content-center align-items-center"><span
                   class="icon-paper-plane"></span></div>
-              <span class="text">info@vinepub.com</span>
+              <span class="text">toqeerbucn@gmail.com</span>
             </div>
             <div class="col-md-5 pr-4 d-flex topper align-items-center text-lg-right justify-content-end">
               <p class="mb-0 register-link"><span>Mon - Sat</span> <span>11:00AM -
@@ -161,7 +163,8 @@
               </div>
               <div class="col-md-3">
                 <div class="featured-menus ftco-animate">
-                  <div class="menu-img img" style="background-image: url(images/Thai-Gai-Yang-Chicken-square.jpg);"></div>
+                  <div class="menu-img img" style="background-image: url(images/Thai-Gai-Yang-Chicken-square.jpg);">
+                  </div>
                   <div class="text text-center">
                     <h3>Kai Yang</h3>
                     <p><span>Meat</span>, <span>Tomatoe</span></p>
@@ -214,7 +217,9 @@
       <div>
         <img src="images/menu.jpg" style="width: 100%;" />
         <img src="images/menu2.jpg" style="width: 100%;" />
-        <iframe width="100%" height="600" src="https://maps.google.com/maps?width=100%&amp;height=100&amp;hl=en&amp;coord=51.5234896,-0.7198138&amp;q=20+Market+St,+Maidenhead&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br />
+        <iframe width="100%" height="600"
+          src="https://maps.google.com/maps?width=100%&amp;height=100&amp;hl=en&amp;coord=51.5234896,-0.7198138&amp;q=20+Market+St,+Maidenhead&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=B&amp;output=embed"
+          frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><br />
       </div>
       <!-- <div class="row no-gutters d-flex align-items-stretch">
         <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
@@ -335,7 +340,7 @@
         </div>
       </div> -->
     </div>
-    
+
   </section>
 
   <section class="ftco-section img" style="background-image: url(images/bg_3.jpg)" data-stellar-background-ratio="0.5"
@@ -347,49 +352,48 @@
             <span class="subheading">Book a table</span>
             <h2 class="mb-4">Make Reservation</h2>
           </div>
-          <form action="#">
+          <form id="reservation-form">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="">Name</label>
-                  <input type="text" class="form-control" placeholder="Your Name">
+                  <label>Name</label>
+                  <input type="text" name="user_name" class="form-control" placeholder="Your Name" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="">Email</label>
-                  <input type="text" class="form-control" placeholder="Your Email">
+                  <label>Email</label>
+                  <input type="email" name="user_email" class="form-control" placeholder="Your Email" required>
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="">Phone</label>
-                  <input type="text" class="form-control" placeholder="Phone">
+                  <label>Phone</label>
+                  <input type="text" name="user_phone" class="form-control" placeholder="Phone">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="">Phone</label>
-                  <input type="text" class="form-control" id="book_date" placeholder="Date">
+                  <label>Date</label>
+                  <input type="text" name="book_date" class="form-control" id="book_date" placeholder="Date">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="">Time</label>
-                  <input type="text" class="form-control" id="book_time" placeholder="Time">
+                  <label>Time</label>
+                  <input type="text" name="book_time" class="form-control" id="book_time" placeholder="Time">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label for="">Person</label>
+                  <label>Person</label>
                   <div class="select-wrap one-third">
-                    <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-                    <select name="" id="" class="form-control">
+                    <select name="person_count" id="person_count" class="form-control">
                       <option value="">Person</option>
-                      <option value="">1</option>
-                      <option value="">2</option>
-                      <option value="">3</option>
-                      <option value="">4+</option>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4+">4+</option>
                     </select>
                   </div>
                 </div>
@@ -600,27 +604,47 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <!-- <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
+  <!-- <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { dataLayer.push(arguments); }
     gtag('js', new Date());
 
     gtag('config', 'UA-23581568-13');
-  </script>
-
+  </script> -->
+<!-- 
   <script defer=""
     src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
     data-cf-beacon="{"
     version":"2024.11.0","token":"cd0b4b3a733644fc843ef0b185f98241","server_timing":{"name":{"cfcachestatus":true,"cfedge":true,"cfextpri":true,"cfl4":true,"cforigin":true,"cfspeedbrain":true},"location_startswith":null}}"=""
-    crossorigin="anonymous"></script>
+    crossorigin="anonymous"></script> -->
 
+<script type="text/javascript">
+  (function() {
+    emailjs.init("XwDI4_8o389ieg3oq"); // Replace with your Public Key
+  })();
+
+  window.onload = function() {
+    document.getElementById('reservation-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      // These IDs must match your EmailJS Service and Template IDs
+      emailjs.sendForm('service_z9mal3i', 'template_ny0kktv', this)
+        .then(function() {
+          alert('Reservation sent successfully!');
+        }, function(error) {
+          alert('Failed to send reservation. Please try again.');
+          console.log('Error:', error);
+        });
+    });
+  }
+</script>
 </body>
 
 </html>
