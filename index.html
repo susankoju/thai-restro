@@ -217,6 +217,20 @@
         </div>
       </div>
       <div>
+        <div class="row no-gutters d-flex align-items-stretch">
+          <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+            <div class="menus d-sm-flex ftco-animate align-items-stretch" style="height: 12rem;">
+              <div class="menu-img img" style="background-image: url(images/food1.jpeg);"></div>
+              <div class="menu-img img" style="background-image: url(images/food6.jpeg);"></div>
+            </div>
+          </div>
+          <div class="col-md-12 col-lg-6 d-flex align-self-stretch">
+            <div class="menus d-sm-flex ftco-animate align-items-stretch">
+              <div class="menu-img img" style="background-image: url(images/food3.jpeg);"></div>
+              <div class="menu-img img" style="background-image: url(images/food4.jpeg);"></div>
+            </div>
+          </div>
+        </div>
         <img src="images/menu.jpg" style="width: 100%;" />
         <img src="images/menu2.jpg" style="width: 100%;" />
         <iframe width="100%" height="600"
@@ -371,26 +385,26 @@
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Phone</label>
-                  <input type="text" name="user_phone" class="form-control" placeholder="Phone">
+                  <input type="text" required name="user_phone" class="form-control" placeholder="Phone">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Date</label>
-                  <input type="text" name="book_date" class="form-control" id="book_date" placeholder="Date">
+                  <input type="text" required name="book_date" class="form-control" id="book_date" placeholder="Date">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Time</label>
-                  <input type="text" name="book_time" class="form-control" id="book_time" placeholder="Time">
+                  <input type="text" required name="book_time" class="form-control" id="book_time" placeholder="Time">
                 </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
                   <label>Person</label>
                   <div class="select-wrap one-third">
-                    <select name="person_count" id="person_count" class="form-control">
+                    <select required name="person_count" id="person_count" class="form-control">
                       <option value="">Person</option>
                       <option value="1">1</option>
                       <option value="2">2</option>
@@ -559,7 +573,7 @@
         <div class="col-md-6 col-lg-3">
           <div class="ftco-footer-widget mb-4">
             <h2 class="ftco-heading-2">Newsletter</h2>
-            <p>Far far away, behind the word mountains, far from the countries.</p>
+            <p>For news, updates and offers.</p>
             <form action="#" class="subscribe-form">
               <div class="form-group">
                 <input type="text" class="form-control mb-2 text-center" placeholder="Enter email address">
@@ -606,26 +620,8 @@
   <script src="js/bootstrap-datepicker.js"></script>
   <script src="js/jquery.timepicker.min.js"></script>
   <script src="js/scrollax.min.js"></script>
-  <!-- <script
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
   <script src="js/google-map.js"></script>
   <script src="js/main.js"></script>
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'UA-23581568-13');
-  </script> -->
-<!-- 
-  <script defer=""
-    src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015"
-    data-cf-beacon="{"
-    version":"2024.11.0","token":"cd0b4b3a733644fc843ef0b185f98241","server_timing":{"name":{"cfcachestatus":true,"cfedge":true,"cfextpri":true,"cfl4":true,"cforigin":true,"cfspeedbrain":true},"location_startswith":null}}"=""
-    crossorigin="anonymous"></script> -->
 
 <script type="text/javascript">
   (function() {
@@ -645,6 +641,11 @@
           console.log('Error:', error);
         });
     });
+
+    // // Get today's date in YYYY-MM-DD format
+    // const today = new Date().toISOString().split('T')[0];
+    // // Set the 'min' attribute to today
+    // document.getElementById('book_date').setAttribute('min', today);
   }
 </script>
 </body>
